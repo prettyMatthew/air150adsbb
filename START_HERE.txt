@@ -1,0 +1,25 @@
+제일 쉬운 실행 순서
+
+Mac / Linux
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m flask --app wsgi:app init-db
+python -m flask --app wsgi:app seed
+python -m flask --app wsgi:app create-admin
+python wsgi.py
+
+Windows
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python -m flask --app wsgi:app init-db
+python -m flask --app wsgi:app seed
+python -m flask --app wsgi:app create-admin
+python wsgi.py
+
+접속 주소
+http://127.0.0.1:5000
+
+이 ZIP은 .env가 이미 로컬 SQLite 기준으로 맞춰져 있어서
+따로 .env 수정 없이 바로 시작할 수 있게 해둔 버전입니다.
